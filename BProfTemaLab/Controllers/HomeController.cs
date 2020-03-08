@@ -33,6 +33,16 @@ namespace BProfTemaLab.Controllers
             return View();
         }
 
+        public IActionResult UjBeszallito()
+        {
+            return View();
+        }
+
+        public IActionResult UjTermek()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
