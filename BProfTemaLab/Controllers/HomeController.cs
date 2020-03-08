@@ -23,7 +23,12 @@ namespace BProfTemaLab.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Beszallitok()
+        {
+            return View();
+        }
+
+        public IActionResult Termekek()
         {
             return View();
         }
