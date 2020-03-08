@@ -43,6 +43,11 @@ namespace BProfTemaLab.Controllers
             return View();
         }
 
+        public IActionResult Stand()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
