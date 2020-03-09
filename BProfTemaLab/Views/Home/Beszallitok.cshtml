@@ -5,9 +5,9 @@
 
 <div class="container">
     <h2>Beszállítók <span class="glyphicon glyphicon-plus-sign align-top" style="cursor: pointer" title="Új beszállító felvétele"></span></h2>
-    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <input class="form-control" id="myBeszallitoInput" type="text" placeholder="Search..">
 
-    <div id="myTable" class="mt-2 border border-dark">
+    <div id="myBeszallitoTable" class="mt-2 border border-dark">
         <div class="border bg-light" style="height:40px;">
             <div class="m-2">
                 <div class="font-weight-bold" style="display:inline-block; font-size:20px;">
@@ -17,27 +17,34 @@
                 </div>
             </div>
         </div>
-        <table id="myTermekTable" class="table table-bordered table-striped mb-0">
-            <thead>
-                <tr>
-                    <th>Név</th>
-                    <th>Egység Ár</th>
-                    <th>üveg/rekesz</th>
-                </tr>
-            </thead>
-            <tbody id="myTable">
-                <tr>
-                    <td>Soproni 1895</td>
-                    <td>550 FT/üveg</td>
-                    <td>20 üveg/rekesz</td>
-                </tr>
-                <tr>
-                    <td>Soproni 1895</td>
-                    <td>550 FT/üveg</td>
-                    <td>20 üveg/rekesz</td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="myTermekTable">
+            <div id="TermekKereses" class="font-weight-bold m-2" style="font-size:16px;">
+                <span class="align-middle">Termékek</span>
+                <span class="glyphicon glyphicon-plus-sign align-middle" style="cursor: pointer" title="Új termék felvétele"></span>
+                <input style="width:200px; display:inline-block;" class="form-control" id="myTermekInput" type="text" placeholder="Search..">
+            </div>
+            <table class="table table-bordered table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Egység Ár</th>
+                        <th>üveg/rekesz</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td>Soproni 1895</td>
+                        <td>550 FT/üveg</td>
+                        <td>20 üveg/rekesz</td>
+                    </tr>
+                    <tr>
+                        <td>Soproni klasszukus</td>
+                        <td>530 FT/üveg</td>
+                        <td>20 üveg/rekesz</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="border bg-light" style="height:40px;">
             <div class="m-2">
                 <div class="font-weight-bold" style="display:inline-block; font-size:20px;">
@@ -59,24 +66,34 @@
 
 <script>
     $(document).ready(function () {
-        $("#myInput").on("keyup", function () {
+        $("#myBeszallitoInput").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#myTable div").filter(function () {
+            $("#myBeszallitoTable div").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+          $("#myTermekInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
 
         $("#myTermekTable").hide();
+        $("#TermekKereses").hide();
         $("#hide").hide();
         $("#show").show();
 
         $("#hide").click(function () {
             $("#myTermekTable").hide();
+            $("#TermekKereses").hide();
             $("#hide").hide();
             $("#show").show();
         });
         $("#show").click(function () {
             $("#myTermekTable").show();
+            $("#TermekKereses").show();
             $("#hide").show();
             $("#show").hide();
         });

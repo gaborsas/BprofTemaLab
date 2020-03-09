@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<div class="container">
+    <h2>Felhasználó kezelés <span class="glyphicon glyphicon-plus-sign align-top" style="cursor: pointer" title="Új felhasználó felvétele"></span></h2>
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>E-mail</th>
+                <th>Beosztás</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>Dezső</td>
+                <td>dezso@alma.hu</td>
+                <td>felszolgáló</td>
+            </tr>
+            <tr>
+                <td>Jenő</td>
+                <td>jeno@korte.hu</td>
+                <td>Főnök</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+
+
+
+
