@@ -2,7 +2,26 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <h1 align="center">Üdv a BprofTemaLab standoló oldalon</h1>
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="card m-5" style="width: 22rem;">
+            <img src="~/truck.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a class="btn btn-primary" asp-action="Beszallitok">Beszállítók</a>
+            </div>
+        </div>
+
+        <div class="card m-5" style="width: 22rem;">
+            <img src="~/drinks.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a class="btn btn-primary" asp-action="Termekek">Termékek</a>
+            </div>
+        </div> 
+        <div class="card m-5" style="width: 22rem;">
+            <img src="~/admin.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a class="btn btn-primary" asp-action="Admin">Admin felület</a>
+            </div>
+        </div>
+    </div>
+
