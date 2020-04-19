@@ -12,6 +12,9 @@ using BProfTemaLab.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BProfTemaLab.SeedService;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BProfTemaLab
 {
@@ -32,8 +35,8 @@ namespace BProfTemaLab
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddDbContext<StandContext>( o => o.UseSqlServer(
-                Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<StandContext>( o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))).AddTransient<ISeedService, SeedServ>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

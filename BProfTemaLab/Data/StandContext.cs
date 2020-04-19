@@ -10,20 +10,6 @@ namespace BProfTemaLab.Data
     {
         public StandContext(DbContextOptions options) : base(options) { }
         public DbSet<Termek> Termekek { get; set; }
-
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Termek>().HasData(
-
-                new Termek
-                {
-                    ID = 164,
-                    Nev = @"Assassin's Creed: Reneszánsz",
-                    BeszallitoID = 1,
-                    EgysegAr = 20,
-                    DarabPerRekesz = 480
-                }
-            );
-        }*/
+        public DbSet<Beszallito> Beszallitok { get; set; }
     }
 }
