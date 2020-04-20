@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using BProfTemaLab.SeedService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BProfTemaLab.Services;
 
 namespace BProfTemaLab
 {
@@ -33,9 +34,14 @@ namespace BProfTemaLab
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddDbContext<StandContext>( o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))).AddTransient<ISeedService, SeedServ>();
+
+            services.AddDbContext<StandContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")))
+                .AddScoped<TermekService>()
+                .AddTransient<ISeedService, SeedServ>()
+                .AddMvc();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
