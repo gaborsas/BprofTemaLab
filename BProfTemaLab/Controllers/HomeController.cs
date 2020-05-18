@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BProfTemaLab.Models;
+using BProfTemaLab.Dal.Services;
 
 namespace BProfTemaLab.Controllers
 {
@@ -23,14 +24,16 @@ namespace BProfTemaLab.Controllers
             return View();
         }
 
-        public IActionResult Beszallitok()
+        public IActionResult Beszallitok([FromServices] SupplierService supplierService)
         {
-            return View();
+            var suppliers = supplierService.GetSuppliers();
+            return View(suppliers);
         }
 
-        public IActionResult Termekek()
+        public IActionResult Termekek([FromServices] ProductService productService)
         {
-            return View();
+            var products = productService.GetProducts();
+            return View(products);
         }
 
         public IActionResult UjBeszallito()

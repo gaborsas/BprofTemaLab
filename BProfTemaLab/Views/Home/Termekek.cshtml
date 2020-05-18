@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BProfTemaLab.Dal.Entities.Product>
 @{
     ViewData["Title"] = "Termekek";
 }
@@ -16,39 +16,15 @@
                 <th>Rekesz/db</th>
             </tr>
         </thead>
-        <tbody id="myTable">
-            <tr>
-                <td>Soproni 1895</td>
-                <td>Soproni</td>
-                <td>550</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>Coca Cola</td>
-                <td>CocaCola</td>
-                <td>350</td>
-                <td>24</td>
-            </tr>
-            <tr>
-                <td>Rövid italos cég</td>
-                <td>Unicum</td>
-                <td>20000</td>
-                <td>1</td>
-            </tr>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <vc:product product="product"></vc:product>
+            }
         </tbody>
     </table>
-</div>
 
-<script>
-    $(document).ready(function () {
-        $("#myInput").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-</script>
+</div>
 
 
 
