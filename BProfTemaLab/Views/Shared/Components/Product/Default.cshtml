@@ -1,9 +1,26 @@
-﻿@model BProfTemaLab.Dal.Entities.Product
+﻿@model IEnumerable<BProfTemaLab.Dal.Dtos.ProductDto>
 
-<tr>
-    <td>@Model.Name</td>
-    <td>@Model.SupplierId</td>
-    <td>@Model.UnitPrice</td>
-</tr>
-
+<h2>Termékek <span class="glyphicon glyphicon-plus-sign align-top" style="cursor: pointer" title="Új termék felvétele"></span></h2>
+<input class="form-control" id="myInput" type="text" placeholder="Search..">
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Beszállító</th>
+            <th>Egység Ár</th>
+            <th>Rekesz/db</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.SupplierName</td>
+            <td>@product.UnitPrice</td>
+        </tr>
+        }
+    </tbody>
+</table>
 

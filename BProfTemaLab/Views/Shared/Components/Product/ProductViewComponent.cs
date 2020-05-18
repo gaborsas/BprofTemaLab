@@ -9,9 +9,9 @@ namespace BProfTemaLab.Views.Shared.Components.Product
 {
     public class ProductViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(BProfTemaLab.Dal.Entities.Product product)
+        public IViewComponentResult Invoke(IEnumerable<BProfTemaLab.Dal.Dtos.ProductDto> products)
         {
-            return View(product);
+            return View(products);
         }
     }
 }

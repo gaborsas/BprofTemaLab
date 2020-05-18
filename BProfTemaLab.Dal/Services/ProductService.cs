@@ -1,4 +1,6 @@
-﻿using BProfTemaLab.Dal.Entities;
+﻿using BProfTemaLab.Dal.Dtos;
+using BProfTemaLab.Dal.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,17 @@ namespace BProfTemaLab.Dal.Services
             DbContext = dbContext;
         }
         public ApplicationDbContext DbContext { get; }
-        public IEnumerable<Product> GetProducts() => DbContext.Product.ToList();
+
+        public IEnumerable<ProductDto> GetProducts() => DbContext.Product
+        .Include(p => p.Supplier)
+        .ToList()
+        .Select(p => new ProductDto
+        {
+            Id = p.Id,
+            Name = p.Name,
+            SupplierId = p.SupplierId,
+            SupplierName = p.Supplier.Name,
+            UnitPrice = p.UnitPrice,
+        });
     }
 }

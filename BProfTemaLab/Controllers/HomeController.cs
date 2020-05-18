@@ -26,7 +26,7 @@ namespace BProfTemaLab.Controllers
 
         public IActionResult Beszallitok([FromServices] SupplierService supplierService)
         {
-            var suppliers = supplierService.GetSuppliers();
+            var suppliers = supplierService.GetSuppliersWithProducts();
             return View(suppliers);
         }
 

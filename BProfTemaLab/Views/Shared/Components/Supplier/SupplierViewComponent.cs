@@ -8,7 +8,7 @@ namespace BProfTemaLab.Views.Shared.Components.Supplier
 {
     public class SupplierViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(BProfTemaLab.Dal.Entities.Supplier supplier)
+        public IViewComponentResult Invoke(BProfTemaLab.Dal.Dtos.SupplierDto supplier)
         {
             return View(supplier);
         }

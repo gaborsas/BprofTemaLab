@@ -1,4 +1,4 @@
-﻿@model BProfTemaLab.Dal.Entities.Supplier
+﻿@model BProfTemaLab.Dal.Dtos.SupplierDto
 
 <div id="myBeszallitoTable" class="mt-2 border border-dark">
     <div class="border bg-light" style="height:40px;">
@@ -9,5 +9,8 @@
                 @Model.Name - @Model.PhoneNumber
             </div>
         </div>
+    </div>
+    <div class="m-2">
+        <vc:product products="@Model.Products"></vc:product>
     </div>
 </div>
