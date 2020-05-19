@@ -12,8 +12,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BProfTemaLab.Dal;
+using BProfTemaLab.Dal.Entities;
+using BProfTemaLab.Dal.SeedInterfaces;
 using BProfTemaLab.Dal.SeedService;
 using BProfTemaLab.Dal.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using BookShop.Services;
 
 namespace BProfTemaLab
 {
@@ -31,15 +35,20 @@ namespace BProfTemaLab
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")))
+                    Configuration.GetConnectionString(nameof(ApplicationDbContext))))
                 .AddScoped<SupplierService>()
                 .AddScoped<ProductService>()
                 .AddTransient<ISeedService, SeedService>();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<User, IdentityRole<int>>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders()
+                .AddDefaultUI();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IRoleSeedService, RoleSeedService>();
+            services.AddScoped<IUserSeedService, UserSeedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,9 +70,9 @@ namespace BProfTemaLab
 
             app.UseRouting();
 
-            app.UseAuthentication();
+       
             app.UseAuthorization();
-
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
