@@ -9,7 +9,7 @@
                 @Model.Name - @Model.PhoneNumber
 
             </div>
-            <div style="display: inline-block">
+            <div style="display: inline-block" class="float-right">
                 <form asp-controller="NewSupplier" asp-action="DeleteSupplier" method="post">
                     <button type="submit" class="btn btn-default text-danger" style="padding:0px 5px; vertical-align: bottom" value="@Model.Id" name="supplierId">X</button>
                 </form>

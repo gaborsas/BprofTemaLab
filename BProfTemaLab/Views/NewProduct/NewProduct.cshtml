@@ -7,15 +7,11 @@
         <h2>Új termék</h2>
         <div class="form-group">
             <label style="width: 200px">Beszállító:</label>
-            <select class="form-control" style="width: 200px; display:inline-block;">
-                <option>Soproni</option>
-                <option>CocaCola</option>
-                <option>Sör gyár</option>
-            </select>
+            @Html.DropDownList("supplierId", (List<SelectListItem>)ViewBag.MySkills,  new { style = "width: 200px; display:inline-block;", @class = "form-control" })
         </div>
         <div class="form-group">
             <label style="width: 200px; vertical-align: top;">Termék neve:</label>
-            <textarea class="form-control" name="name" style="width: 200px; display:inline-block;"></textarea>
+            <input type="text" name="name" class="form-control"  style="width: 200px; display:inline-block;"/>
         </div>
         <div class="form-group">
             <label style="width: 200px">Egység ár:</label>
@@ -26,8 +22,8 @@
             <input type="number" name="quantity" class="form-control" style="width: 200px; display: inline-block;" />
         </div>
         <div>
-            <button type="button" class="btn btn-light">Vissza</button>
-            <button type="submit" class="btn btn-default">Mentés</button>
+            <button type="button" class="btn btn-secondary">Vissza</button>
+            <button type="submit" class="btn btn-primary">Mentés</button>
         </div>
     </div>
 </form>
