@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BProfTemaLab.Dal.Services
@@ -16,16 +17,51 @@ namespace BProfTemaLab.Dal.Services
         }
         public ApplicationDbContext DbContext { get; }
 
-        public IEnumerable<ProductDto> GetProducts() => DbContext.Product
-        .Include(p => p.Supplier)
-        .ToList()
-        .Select(p => new ProductDto
+        public static Expression<Func<Product, ProductDto>> ProductDtoSelector { get; } = p => new ProductDto
         {
             Id = p.Id,
             Name = p.Name,
             SupplierId = p.SupplierId,
             SupplierName = p.Supplier.Name,
             UnitPrice = p.UnitPrice,
-        });
+            Quantity = p.Quantity
+        };
+
+        public IEnumerable<ProductDto> GetProducts() => DbContext.Product
+            .Select(ProductDtoSelector)
+            .ToList();
+
+        public ProductDto GetProductById(int productId) => DbContext.Product
+            .Where(p => p.Id == productId)
+            .Select(ProductDtoSelector)
+            .Single();
+
+        public ProductDto AddProduct(Product product)
+        {
+            var newproduct = DbContext.Product.Add(new Product
+            {
+                Name = product.Name,
+                SupplierId = product.SupplierId,
+                UnitPrice = product.UnitPrice,
+                Quantity = product.Quantity
+
+            });
+
+            DbContext.SaveChanges();
+
+            return null;
+
+            //return DbContext.Product
+            //    .Where(p => p.Id = newproduct.Entity.Id)
+            //    .Select(ProductDtoSelector)
+            //    .Single();
+        }
+
+        public void DeleteProduct(int productId)
+        {
+            DbContext.Remove(new Product { Id = productId });
+            DbContext.SaveChanges();
+        }
+
     }
 }

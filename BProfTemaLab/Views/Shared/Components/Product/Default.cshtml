@@ -6,19 +6,26 @@
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
+            <th></th>
             <th>Név</th>
             <th>Beszállító</th>
             <th>Egység Ár</th>
-            <th>Rekesz/db</th>
+            <th>Mennyiség</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var product in Model)
         {
         <tr>
+            <td>
+                <form asp-controller="NewProduct" asp-action="DeleteProduct" method="post">
+                    <button type="submit" class="btn btn-default" value="@product.Id" name="productId">Törlés</button>
+                </form>
+            </td>
             <td>@product.Name</td>
             <td>@product.SupplierName</td>
             <td>@product.UnitPrice</td>
+            <td>@product.Quantity</td>
         </tr>
         }
     </tbody>

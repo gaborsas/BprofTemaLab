@@ -35,6 +35,7 @@ namespace BProfTemaLab.Dal.Services
                                SupplierId = p.SupplierId,
                                SupplierName = s.Name,
                                UnitPrice = p.UnitPrice,
+                               Quantity = p.Quantity
                            }).ToList(),
          });
     }

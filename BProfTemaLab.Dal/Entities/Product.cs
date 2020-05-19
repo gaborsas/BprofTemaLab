@@ -10,6 +10,7 @@ namespace BProfTemaLab.Dal.Entities
         public int SupplierId { get; set; }
         public string Name { get; set; }
         public int UnitPrice { get; set; }
+        public int Quantity { get; set; }
 
         public Supplier Supplier { get; set; }
     }

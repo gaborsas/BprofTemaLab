@@ -4,14 +4,16 @@ using BProfTemaLab.Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BProfTemaLab.Dal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200519141618_Quantity")]
+    partial class Quantity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace BProfTemaLab.Dal.Migrations
                         {
                             Id = 1,
                             Name = "Coca Cola",
-                            Quantity = 40,
+                            Quantity = 0,
                             SupplierId = 1,
                             UnitPrice = 250
                         },
@@ -57,7 +59,7 @@ namespace BProfTemaLab.Dal.Migrations
                         {
                             Id = 2,
                             Name = "Soproni classic",
-                            Quantity = 30,
+                            Quantity = 0,
                             SupplierId = 2,
                             UnitPrice = 350
                         },
@@ -65,7 +67,7 @@ namespace BProfTemaLab.Dal.Migrations
                         {
                             Id = 3,
                             Name = "Soproni Demon",
-                            Quantity = 50,
+                            Quantity = 0,
                             SupplierId = 2,
                             UnitPrice = 450
                         });

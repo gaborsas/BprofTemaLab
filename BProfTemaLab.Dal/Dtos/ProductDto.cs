@@ -11,5 +11,6 @@ namespace BProfTemaLab.Dal.Dtos
         public string SupplierName { get; set; }
         public string Name { get; set; }
         public int UnitPrice { get; set; }
+        public int Quantity { get; set; }
     }
 }

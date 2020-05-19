@@ -51,6 +51,7 @@ namespace BProfTemaLab.Dal.SeedService
                     SupplierId = 1,
                     Name = @"Coca Cola",
                     UnitPrice = 250,
+                    Quantity = 40
                 },
 
                    new Product
@@ -59,6 +60,7 @@ namespace BProfTemaLab.Dal.SeedService
                     SupplierId = 2,
                     Name = @"Soproni classic",
                     UnitPrice = 350,
+                    Quantity = 30
                 },
 
                      new Product
@@ -67,6 +69,7 @@ namespace BProfTemaLab.Dal.SeedService
                     SupplierId = 2,
                     Name = @"Soproni Demon",
                     UnitPrice = 450,
+                    Quantity = 50
                 },
             };
         }

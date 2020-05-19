@@ -41,10 +41,6 @@ namespace BProfTemaLab.Controllers
             return View();
         }
 
-        public IActionResult UjTermek()
-        {
-            return View();
-        }
 
         public IActionResult Admin()
         {
