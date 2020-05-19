@@ -36,9 +36,9 @@ namespace BProfTemaLab.Dal.Services
             .Select(ProductDtoSelector)
             .Single();
 
-        public ProductDto AddProduct(Product product)
+        public void AddProduct(Product product)
         {
-            var newproduct = DbContext.Product.Add(new Product
+            DbContext.Product.Add(new Product
             {
                 Name = product.Name,
                 SupplierId = product.SupplierId,
@@ -48,13 +48,6 @@ namespace BProfTemaLab.Dal.Services
             });
 
             DbContext.SaveChanges();
-
-            return null;
-
-            //return DbContext.Product
-            //    .Where(p => p.Id = newproduct.Entity.Id)
-            //    .Select(ProductDtoSelector)
-            //    .Single();
         }
 
         public void DeleteProduct(int productId)

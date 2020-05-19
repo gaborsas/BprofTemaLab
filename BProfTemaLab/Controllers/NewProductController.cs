@@ -41,7 +41,5 @@ namespace BProfTemaLab.Controllers
             ProductService.DeleteProduct(productId);
             return RedirectToAction("Termekek", "Home");
         }
-
-
     }
 }

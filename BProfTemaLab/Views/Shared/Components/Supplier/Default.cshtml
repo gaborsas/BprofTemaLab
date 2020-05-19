@@ -4,13 +4,35 @@
     <div class="border bg-light" style="height:40px;">
         <div class="m-2">
             <div class="font-weight-bold" style="display:inline-block; font-size:20px;">
-                <span id="show" class="glyphicon glyphicon-menu-right" style="cursor: pointer"></span>
-                <span id="hide" class="glyphicon glyphicon-menu-down" style="cursor: pointer"></span>
+                <span id="right-@Model.Id" class="glyphicon glyphicon-menu-right" asp-action="ChangeVisible()" style="cursor: pointer"></span>
+                <span id="down-@Model.Id" class="glyphicon glyphicon-menu-down hide" asp-action="ChangeVisible()" style="cursor: pointer"></span>
                 @Model.Name - @Model.PhoneNumber
+
+            </div>
+            <div style="display: inline-block">
+                <form asp-controller="NewSupplier" asp-action="DeleteSupplier" method="post">
+                    <button type="submit" class="btn btn-default text-danger" style="padding:0px 5px; vertical-align: bottom" value="@Model.Id" name="supplierId">X</button>
+                </form>
             </div>
         </div>
     </div>
-    <div class="m-2">
+    <div class="m-2 hide" id="showproduct-@Model.Id">
         <vc:product products="@Model.Products"></vc:product>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#down-@Model.Id").click(function () {
+            $("#right-@Model.Id").removeClass('hide');
+            $("#down-@Model.Id").addClass('hide');
+            $("#showproduct-@Model.Id").addClass('hide');
+        });
+        $("#right-@Model.Id").click(function () {
+            $("#right-@Model.Id").addClass('hide');
+            $("#down-@Model.Id").removeClass('hide');
+            $("#showproduct-@Model.Id").removeClass('hide');
+        });
+    });
+
+</script>

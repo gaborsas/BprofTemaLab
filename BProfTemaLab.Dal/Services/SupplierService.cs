@@ -15,7 +15,6 @@ namespace BProfTemaLab.Dal.Services
             DbContext = dbContext;
         }
         public ApplicationDbContext DbContext { get; }
-        //public IEnumerable<SupplierDto> GetSuppliersWithProducts() => DbContext.Supplier.ToList();
 
         public IEnumerable<SupplierDto> GetSuppliersWithProducts() => DbContext.Supplier
          .Include(s => s.Products)
@@ -38,5 +37,25 @@ namespace BProfTemaLab.Dal.Services
                                Quantity = p.Quantity
                            }).ToList(),
          });
+
+        public void AddSupplier(Supplier supplier)
+        {
+            DbContext.Supplier.Add(new Supplier
+            {
+                Name = supplier.Name,
+                PhoneNumber = supplier.PhoneNumber,
+                Email = supplier.Email,
+                Address = supplier.Address,
+            });
+
+            DbContext.SaveChanges();
+        }
+
+        public void DeleteSupplier(int supplierId)
+        {
+            DbContext.Remove(new Supplier { Id = supplierId });
+            DbContext.SaveChanges();
+        }
+
     }
 }
