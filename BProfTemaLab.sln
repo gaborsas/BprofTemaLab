@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BProfTemaLab", "BProfTemaLab\BProfTemaLab.csproj", "{1A5E6356-8BE7-4350-A182-45DE990B7684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BProfTemaLab.Dal", "BProfTemaLab.Dal\BProfTemaLab.Dal.csproj", "{F9CFC829-576E-4D08-ACC7-AE7F03DFE863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BProfTemaLab.Dal", "BProfTemaLab.Dal\BProfTemaLab.Dal.csproj", "{F9CFC829-576E-4D08-ACC7-AE7F03DFE863}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
