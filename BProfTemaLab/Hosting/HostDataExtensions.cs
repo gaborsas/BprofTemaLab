@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BProfTemaLab.Dal.SeedInterfaces;
 
-namespace BookShop.Web.Hosting
+namespace BProfTemaLab.Hosting
 {
     public static class HostDataExtensions
     {
