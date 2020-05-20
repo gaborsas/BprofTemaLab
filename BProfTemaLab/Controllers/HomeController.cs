@@ -52,6 +52,12 @@ namespace BProfTemaLab.Controllers
             return View();
         }
 
+        public IActionResult Standok([FromServices] StandService standService)
+        {
+            var stands = standService.GetStands();
+            return View(stands);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

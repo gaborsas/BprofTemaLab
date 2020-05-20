@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BProfTemaLab.Dal.Dtos.StandDto>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            @*<th width="20px"></th>*@
+            <th>Vett</th>
+            <th>Eladott</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stand in Model)
+        {
+            <tr>
+                @*<td>
+                    <form asp-controller="NewProduct" asp-action="DeleteProduct" method="post">
+                        <button type="submit" class="btn btn-default text-danger" style="padding:0px 5px" value="@product.Id" name="productId">X</button>
+                    </form>
+                </td>*@
+                <td>@stand.Purchased</td>
+                <td>@stand.Sold</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
