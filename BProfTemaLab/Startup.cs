@@ -38,6 +38,7 @@ namespace BProfTemaLab
                     Configuration.GetConnectionString(nameof(ApplicationDbContext))))
                 .AddScoped<SupplierService>()
                 .AddScoped<ProductService>()
+                .AddScoped<StandService>()
                 .AddTransient<ISeedService, SeedService>();
 
             services.AddIdentity<User, IdentityRole<int>>()

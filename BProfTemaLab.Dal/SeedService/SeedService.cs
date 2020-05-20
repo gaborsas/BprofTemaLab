@@ -71,8 +71,9 @@ namespace BProfTemaLab.Dal.SeedService
                     Name = @"Soproni Demon",
                     UnitPrice = 450,
                     Quantity = 50
-                },
+                }
             };
+
             Stands = new List<Stand>()
             {
                 new Stand
@@ -92,11 +93,11 @@ namespace BProfTemaLab.Dal.SeedService
                     Id = 2,
                     ProductId = 2,
                     Purchased = 10,
-                    ClosingQuantity = 30,
                     Scrap = 5,
                     Sold = 10,
                     Loss = 1750,
-                    Income = 3500
+                    Income = 3500,
+                    ClosingQuantity = 20
                 },
 
                      new Stand

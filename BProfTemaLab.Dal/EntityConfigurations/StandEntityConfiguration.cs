@@ -14,6 +14,6 @@ namespace BProfTemaLab.Dal.EntityConfigurations
         public StandEntityConfiguration(ISeedService seedService)
         => _seedService = seedService;
         public void Configure(EntityTypeBuilder<Stand> builder)
-        => builder.HasData(_seedService.Products);
+        => builder.HasData(_seedService.Stands);
     }
 }

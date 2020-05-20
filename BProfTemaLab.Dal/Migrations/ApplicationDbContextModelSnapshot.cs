@@ -71,6 +71,76 @@ namespace BProfTemaLab.Dal.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BProfTemaLab.Dal.Entities.Stand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClosingQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Income")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Loss")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Purchased")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Scrap")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Sold")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Stand");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClosingQuantity = 40,
+                            Income = 7600,
+                            Loss = 250,
+                            ProductId = 1,
+                            Purchased = 20,
+                            Scrap = 1,
+                            Sold = 19
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClosingQuantity = 20,
+                            Income = 3500,
+                            Loss = 1750,
+                            ProductId = 2,
+                            Purchased = 10,
+                            Scrap = 5,
+                            Sold = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ClosingQuantity = 50,
+                            Income = 4500,
+                            Loss = 0,
+                            ProductId = 3,
+                            Purchased = 30,
+                            Scrap = 0,
+                            Sold = 10
+                        });
+                });
+
             modelBuilder.Entity("BProfTemaLab.Dal.Entities.Supplier", b =>
                 {
                     b.Property<int>("Id")
@@ -326,6 +396,15 @@ namespace BProfTemaLab.Dal.Migrations
                     b.HasOne("BProfTemaLab.Dal.Entities.Supplier", "Supplier")
                         .WithMany("Products")
                         .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BProfTemaLab.Dal.Entities.Stand", b =>
+                {
+                    b.HasOne("BProfTemaLab.Dal.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
