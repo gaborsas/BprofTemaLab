@@ -10,6 +10,7 @@ namespace BProfTemaLab.Dal.SeedService
     {
         public IList<Supplier> Suppliers { get; }
         public IList<Product> Products { get; }
+        public IList<Stand> Stands { get; }
 
         public SeedService()
         {
@@ -70,6 +71,44 @@ namespace BProfTemaLab.Dal.SeedService
                     Name = @"Soproni Demon",
                     UnitPrice = 450,
                     Quantity = 50
+                },
+            };
+            Stands = new List<Stand>()
+            {
+                new Stand
+                 {
+                    Id = 1,
+                    ProductId = 1,
+                    Purchased = 20,
+                    ClosingQuantity = 40,
+                    Scrap = 1,
+                    Sold = 19,
+                    Loss = 250,
+                    Income = 7600
+                },
+
+                   new Stand
+                 {
+                    Id = 2,
+                    ProductId = 2,
+                    Purchased = 10,
+                    ClosingQuantity = 30,
+                    Scrap = 5,
+                    Sold = 10,
+                    Loss = 1750,
+                    Income = 3500
+                },
+
+                     new Stand
+                 {
+                    Id = 3,
+                    ProductId = 3,
+                    Purchased = 30,
+                    ClosingQuantity = 50,
+                    Scrap = 0,
+                    Sold = 10,
+                    Loss = 0,
+                    Income = 4500
                 },
             };
         }

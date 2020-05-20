@@ -9,5 +9,6 @@ namespace BProfTemaLab.Dal.SeedService
     {
         IList<Supplier> Suppliers { get; }
         IList<Product> Products { get; }
+        IList<Stand> Stands { get; }
     }
 }
