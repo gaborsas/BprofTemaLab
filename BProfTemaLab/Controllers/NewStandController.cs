@@ -56,6 +56,13 @@ namespace BProfTemaLab.Controllers
         }
 
         [HttpPost]
+        public ActionResult DeleteStand(int standId)
+        {
+            StandService.DeleteStand(standId);
+            return RedirectToAction("Standok", "Home");
+        }
+
+        [HttpPost]
         public ActionResult DeleteProduct(int productId)
         {
             ProductService.DeleteProduct(productId);

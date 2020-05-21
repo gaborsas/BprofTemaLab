@@ -3,9 +3,10 @@
     ViewData["Title"] = "Standok";
 }
 
-<div class="container">
-    <h2>Standok </h2>
-    <vc:stand stands="@Model"></vc:stand>
+    <div class="container">
+        <h2>Standok</h2>
+        <vc:stand stands="@Model"></vc:stand>
+        <a class="btn btn-info" asp-area="" asp-controller="NewStand" asp-action="NewStand" style="cursor: pointer" role="button">Átvétel</a>
 </div>
 
 
