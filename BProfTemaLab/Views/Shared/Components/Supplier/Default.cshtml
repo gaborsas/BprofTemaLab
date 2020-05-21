@@ -1,6 +1,7 @@
 ﻿@model BProfTemaLab.Dal.Dtos.SupplierDto
 
-<div id="myBeszallitoTable" class="mt-2 border border-dark">
+
+<div class="mt-2 border border-dark">
     <div class="border bg-light" style="height:40px;">
         <div class="m-2">
             <div class="font-weight-bold" style="display:inline-block; font-size:20px;">
@@ -21,6 +22,7 @@
     </div>
 </div>
 
+
 <script type="text/javascript">
     $(function () {
         $("#down-@Model.Id").click(function () {
@@ -34,5 +36,4 @@
             $("#showproduct-@Model.Id").removeClass('hide');
         });
     });
-
 </script>
