@@ -42,9 +42,10 @@ namespace BProfTemaLab.Controllers
         }
 
 
-        public IActionResult Admin()
+        public IActionResult Admin([FromServices] UserService userService)
         {
-            return View();
+            var users = userService.GetUsers();
+            return View(users);
         }
 
         public IActionResult Stand()
