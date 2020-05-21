@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BProfTemaLab.Dal.Entities.User>
 @{
     ViewData["Title"] = "Admin";
 }
@@ -16,16 +16,16 @@
             </tr>
         </thead>
         <tbody id="myTable">
-            <tr>
-                <td>Dezső</td>
-                <td>dezso@alma.hu</td>
-                <td>felszolgáló</td>
-            </tr>
-            <tr>
-                <td>Jenő</td>
-                <td>jeno@korte.hu</td>
-                <td>Főnök</td>
-            </tr>
+
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td>@user.UserName</td>
+                </tr>
+
+            }
         </tbody>
     </table>
 </div>

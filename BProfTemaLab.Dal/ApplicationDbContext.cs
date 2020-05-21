@@ -16,6 +16,7 @@ namespace BProfTemaLab.Dal
         private readonly ISeedService _seedService;
         public DbSet<Supplier> Supplier { get; set; }
         public DbSet<Product> Product { get; set; }
+        public DbSet<User> User { get; set; }
         public ApplicationDbContext(DbContextOptions options, ISeedService seedService) : base(options)
        => _seedService = seedService;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
