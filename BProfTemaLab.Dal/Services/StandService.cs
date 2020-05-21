@@ -20,14 +20,14 @@ namespace BProfTemaLab.Dal.Services
         {
             Id = s.Id,
             ProductId = s.ProductId,
+            StartingQuantity = s.StartingQuantity,
             Purchased = s.Purchased,
-            ClosingQuantity = s.ClosingQuantity,
-            Scrap = s.Scrap,
             Sold = s.Sold,
+            Scrap = s.Scrap,
+            ClosingQuantity = s.ClosingQuantity,
             Loss = s.Loss,
             Income = s.Income,
             ProductName = s.Product.Name,
-            StartingQuantity = s.Product.Quantity,
             UnitPrice = s.Product.UnitPrice
     };
 
@@ -46,10 +46,11 @@ namespace BProfTemaLab.Dal.Services
             {
                 Id = stand.Id,
                 ProductId = stand.ProductId,
+                StartingQuantity = stand.StartingQuantity,
                 Purchased = stand.Purchased,
-                ClosingQuantity = stand.ClosingQuantity,
-                Scrap = stand.Scrap,
                 Sold = stand.Sold,
+                Scrap = stand.Scrap,
+                ClosingQuantity = stand.ClosingQuantity,
                 Loss = stand.Loss,
                 Income = stand.Income
 

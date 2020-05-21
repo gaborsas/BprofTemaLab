@@ -99,6 +99,9 @@ namespace BProfTemaLab.Dal.Migrations
                     b.Property<int>("Sold")
                         .HasColumnType("int");
 
+                    b.Property<int>("StartingQuantity")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
@@ -109,13 +112,14 @@ namespace BProfTemaLab.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            ClosingQuantity = 40,
+                            ClosingQuantity = 30,
                             Income = 7600,
                             Loss = 250,
                             ProductId = 1,
-                            Purchased = 20,
+                            Purchased = 40,
                             Scrap = 1,
-                            Sold = 19
+                            Sold = 29,
+                            StartingQuantity = 20
                         },
                         new
                         {
@@ -126,7 +130,8 @@ namespace BProfTemaLab.Dal.Migrations
                             ProductId = 2,
                             Purchased = 10,
                             Scrap = 5,
-                            Sold = 10
+                            Sold = 10,
+                            StartingQuantity = 20
                         },
                         new
                         {
@@ -137,7 +142,8 @@ namespace BProfTemaLab.Dal.Migrations
                             ProductId = 3,
                             Purchased = 30,
                             Scrap = 0,
-                            Sold = 10
+                            Sold = 10,
+                            StartingQuantity = 20
                         });
                 });
 

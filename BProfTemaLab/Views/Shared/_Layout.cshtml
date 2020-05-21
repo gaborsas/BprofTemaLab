@@ -26,26 +26,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Beszallitok">Beszállítók</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Termekek">Termékek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="NewSupplier" asp-action="NewSupplier">Új beszállító</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="NewProduct" asp-action="NewProduct">Új termékek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Stand">Stand</a>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle navbar-dark bg-dark box-shadow mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Menü
+                                </button>
+                                <div class="dropdown-menu navbar-dark bg-dark box-shadow mb-3" aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Beszallitok">Beszállítók</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Termekek">Termékek</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Standok">Standok</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Standok">Standok</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="NewStand" asp-action="NewStand">Új stand</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Stand">Stand</a>
                         </li>
                     </ul>
                 </div>

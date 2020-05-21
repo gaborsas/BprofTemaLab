@@ -4,12 +4,7 @@
 }
 
 <div class="container">
-    <h2>Termékek <span class="glyphicon glyphicon-plus-sign align-top" style="cursor: pointer" title="Új termék felvétele"></span></h2>
+    <h2>Termékek <a class="glyphicon glyphicon-plus-sign align-top" asp-area="" asp-controller="NewProduct" asp-action="NewProduct" style="cursor: pointer" title="Új termék felvétele"></a></h2>
     <input class="form-control" id="myInput" type="text" placeholder="Search..">
-    
     <vc:product products="@Model"></vc:product>
 </div>
-
-
-
-

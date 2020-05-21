@@ -80,10 +80,11 @@ namespace BProfTemaLab.Dal.SeedService
                  {
                     Id = 1,
                     ProductId = 1,
-                    Purchased = 20,
-                    ClosingQuantity = 40,
+                    StartingQuantity = 20,
+                    Purchased = 40,
+                    Sold = 29,
                     Scrap = 1,
-                    Sold = 19,
+                    ClosingQuantity = 30,
                     Loss = 250,
                     Income = 7600
                 },
@@ -92,22 +93,24 @@ namespace BProfTemaLab.Dal.SeedService
                  {
                     Id = 2,
                     ProductId = 2,
+                    StartingQuantity = 20,
                     Purchased = 10,
-                    Scrap = 5,
                     Sold = 10,
+                    Scrap = 5,
+                    ClosingQuantity = 20,
                     Loss = 1750,
-                    Income = 3500,
-                    ClosingQuantity = 20
+                    Income = 3500
                 },
 
                      new Stand
                  {
                     Id = 3,
                     ProductId = 3,
+                    StartingQuantity = 20,
                     Purchased = 30,
-                    ClosingQuantity = 50,
-                    Scrap = 0,
                     Sold = 10,
+                    Scrap = 0,
+                    ClosingQuantity = 50,
                     Loss = 0,
                     Income = 4500
                 },

@@ -4,22 +4,36 @@
     <thead>
         <tr>
             @*<th width="20px"></th>*@
+            <th>Név</th>
+            <th>Nyitó</th>
             <th>Vett</th>
-            <th>Eladott</th>
+            <th>Eladva</th>
+            <th>Selejt</th>
+            <th>Záró</th>
+            <th>Ár</th>
+            <th>Bevétel</th>
+            <th>Veszteség</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var stand in Model)
         {
-            <tr>
-                @*<td>
-                    <form asp-controller="NewProduct" asp-action="DeleteProduct" method="post">
-                        <button type="submit" class="btn btn-default text-danger" style="padding:0px 5px" value="@product.Id" name="productId">X</button>
-                    </form>
-                </td>*@
-                <td>@stand.Purchased</td>
-                <td>@stand.Sold</td>
-            </tr>
+        <tr>
+            @*<td>
+            <form asp-controller="NewProduct" asp-action="DeleteProduct" method="post">
+                <button type="submit" class="btn btn-default text-danger" style="padding:0px 5px" value="@product.Id" name="productId">X</button>
+            </form>
+        </td>*@
+            <td>@stand.ProductName</td>
+            <td>@stand.StartingQuantity</td>
+            <td>@stand.Purchased</td>
+            <td>@stand.Sold</td>
+            <td>@stand.Scrap</td>
+            <td>@stand.ClosingQuantity</td>
+            <td>@stand.UnitPrice</td>
+            <td>@stand.Income</td>
+            <td>@stand.Loss</td>
+        </tr>
         }
     </tbody>
 </table>

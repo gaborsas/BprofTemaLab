@@ -50,6 +50,13 @@ namespace BProfTemaLab.Dal.Services
             DbContext.SaveChanges();
         }
 
+        public void ChangeProductQuantity(int productId, int newQuantity)
+        {
+            var product = DbContext.Product.Single(p => p.Id == productId);
+            product.Quantity = newQuantity;
+            DbContext.SaveChanges();
+        }
+
         public void DeleteProduct(int productId)
         {
             DbContext.Remove(new Product { Id = productId });

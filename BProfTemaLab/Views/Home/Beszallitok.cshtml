@@ -3,7 +3,7 @@
     ViewData["Title"] = "Beszallitok";
 }
 <div class="container">
-    <h2>Beszállítók <span class="glyphicon glyphicon-plus-sign align-top" style="cursor: pointer" title="Új beszállító felvétele"></span></h2>
+    <h2>Beszállítók <a class="glyphicon glyphicon-plus-sign align-top" asp-area="" asp-controller="NewSupplier" asp-action="NewSupplier" style="cursor: pointer" title="Új beszállító felvétele"></a></h2>
     <input class="form-control" id="myBeszallitoInput" type="text" placeholder="Search..">
 
     @foreach (var supplier in Model)
