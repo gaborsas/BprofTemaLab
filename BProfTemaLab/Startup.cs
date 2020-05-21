@@ -17,7 +17,7 @@ using BProfTemaLab.Dal.SeedInterfaces;
 using BProfTemaLab.Dal.SeedService;
 using BProfTemaLab.Dal.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using BookShop.Services;
+using BProfTemaLab.Services;
 
 namespace BProfTemaLab
 {
